@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Villian} from '../villian'
+import {Villian} from '../villian';
+import {VILLIANS} from '../mock-villians';
 
 @Component({
   selector: 'app-villians',
