@@ -11,10 +11,7 @@ export class VilliansComponent implements OnInit {
 
   constructor() { }
 
-  villian: Villian = {
-    id: 1,
-    name: 'SeuJorgio'
-  }
+  villians = VILLIANS;
 
   ngOnInit(): void {
   }

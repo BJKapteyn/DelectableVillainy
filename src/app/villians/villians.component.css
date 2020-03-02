@@ -1,0 +1,15 @@
+.villians li {
+  list-style-type: none;
+  border: 2px solid rgb(250, 90, 90);
+  border-radius: 5px;
+  display: inline-block;
+  width: 400px;
+  margin: 5px;
+}
+
+.villians h1 {
+  width: 100%;
+  background-color: rgb(250, 90, 90);
+  color: white;
+  margin: 0px auto;
+}
