@@ -7,9 +7,37 @@
   margin: 5px;
 }
 
+@keyframes redBorderFadeIn {
+  from {border: 2px solid rgb(250, 90, 90);}
+  to {border: 2px solid rgb(249, 41, 41)}
+}
+
+@keyframes redBackgroundFadeIn {
+  from {background-color: 2px solid rgb(250, 90, 90);}
+  to {background-color: 2px solid rgb(249, 41, 41)}
+}
+
+@keyframes redFadeOut {
+  from {border: 2px solid rgb(249, 41, 41)}
+  to {border: 2px solid rgb(250, 90, 90);}
+}
+
+.villians li:hover .villianDetails h1 {
+  animation-name: redBackgroundFadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.villians li:hover {
+  animation-name: redBorderFadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
 .villians h1 {
   width: 100%;
   background-color: rgb(250, 90, 90);
   color: white;
   margin: 0px auto;
+  text-align: center;
 }
