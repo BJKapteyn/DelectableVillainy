@@ -4,7 +4,7 @@
   text-align: center;
 }
 
-.villians li {
+.villians li.unselected {
   cursor: pointer;
   list-style-type: none;
   border: 2px solid rgb(250, 90, 90);

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Villian} from '../villian';
 
 @Component({
@@ -9,12 +9,8 @@ import {Villian} from '../villian';
 export class VillianDetailComponent implements OnInit {
 
   constructor() { }
-
-  villian: Villian;
-
-  onSelect(villian: Villian) {
-    this.villian = villian;
-  }
+  //collects villian info from villians.component.html template
+  @Input() villian: Villian;
 
   ngOnInit(): void {
   }

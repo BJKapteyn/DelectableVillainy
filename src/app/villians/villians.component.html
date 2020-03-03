@@ -1,10 +1,14 @@
+<app-villian-detail [villian]="selectedVillian"></app-villian-detail>
 <h2>The Villians:</h2>
 <ul class="villians">
-  <li [class.selected]="villian === selectedVillian" *ngFor="let villian of villians" (click)="onSelect(villian)">
-    <div  class="villianDetails">
+  <!--changes class to 'selected' when a villian is clicked on-->
+  <li class="unselected" [class.selected]="villian === selectedVillian" *ngFor="let villian of villians" (click)="onSelect(villian)">
+    <div class="villianDetails">
       <h1>{{villian.name}}</h1>
       <span class="badge">{{villian.id}}</span>
-      <p  class="description"></p>
+      <p class="description"></p>
     </div>
   </li>
+
 </ul>
+
