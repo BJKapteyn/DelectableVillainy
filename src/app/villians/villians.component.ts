@@ -22,6 +22,7 @@ export class VilliansComponent implements OnInit {
 
   onSelect(villian: Villian) {
     this.selectedVillian = villian;
+    this.messageService.add(`HeroService: Selected ${villian.name}`);
   }
 
   ngOnInit(): void {
