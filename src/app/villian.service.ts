@@ -7,5 +7,8 @@ import {VILLIANS} from './mock-villians';
 })
 export class VillianService {
 
+  getVillians(): Villian[] {
+    return VILLIANS;
+  }
   constructor() { }
 }

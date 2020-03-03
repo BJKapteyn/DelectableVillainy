@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Villian} from '../villian';
-import {VILLIANS} from '../mock-villians';
+import {VillianService} from '../villian.service';
 
 @Component({
   selector: 'app-villians',
@@ -9,16 +9,21 @@ import {VILLIANS} from '../mock-villians';
 })
 export class VilliansComponent implements OnInit {
 
-  constructor() { }
+  constructor(private villianService: VillianService) { }
 
-  villians = VILLIANS;
+  villians: Villian[];
   selectedVillian: Villian;
+
+  getVillians(): void {
+    this.villians = this.villianService.getVillians();
+  }
 
   onSelect(villian: Villian) {
     this.selectedVillian = villian;
   }
 
   ngOnInit(): void {
+    this.getVillians();
   }
 
 }
