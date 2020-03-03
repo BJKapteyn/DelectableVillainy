@@ -15,7 +15,7 @@ export class VilliansComponent implements OnInit {
   selectedVillian: Villian;
 
   getVillians(): void {
-    this.villians = this.villianService.getVillians();
+    this.villianService.getVillians().subscribe(villians => this.villians = villians);
   }
 
   onSelect(villian: Villian) {
