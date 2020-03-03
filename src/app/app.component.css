@@ -1,0 +1,8 @@
+.banner {
+  text-align: center;
+  background: rgb(250, 90, 90);
+  margin: 0 auto;
+  height: 50px;
+  color: white;
+  padding-top: 10px;
+}

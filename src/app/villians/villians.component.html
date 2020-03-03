@@ -1,8 +1,4 @@
-<h2>The Villians</h2>
-<div id="selectedVillian">
-  <h1 *ngIf="selectedVillian">{{selectedVillian.name}}</h1>
-  <p *ngIf="selectedVillian">{{selectedVillian.description}}</p>
-</div>
+<h2>The Villians:</h2>
 <ul class="villians">
   <li [class.selected]="villian === selectedVillian" *ngFor="let villian of villians" (click)="onSelect(villian)">
     <div  class="villianDetails">

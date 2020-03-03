@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { VilliansComponent } from './villians/villians.component';
 
 import { FormsModule } from '@angular/forms';
+import { VillianDetailComponent } from './villian-detail/villian-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VilliansComponent
+    VilliansComponent,
+    VillianDetailComponent
   ],
   imports: [
     BrowserModule,
