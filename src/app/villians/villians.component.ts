@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import {Villian} from '../villian';
 import {VillianService} from '../villian.service';
+import {MessageService} from '../message.service';
 
 @Component({
   selector: 'app-villians',
@@ -9,7 +11,7 @@ import {VillianService} from '../villian.service';
 })
 export class VilliansComponent implements OnInit {
 
-  constructor(private villianService: VillianService) { }
+  constructor(private villianService: VillianService, private messageService: MessageService) { }
 
   villians: Villian[];
   selectedVillian: Villian;

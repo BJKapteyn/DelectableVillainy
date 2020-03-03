@@ -1,0 +1,11 @@
+div.message {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+h2, div, button {
+  margin: 5px;
+}
