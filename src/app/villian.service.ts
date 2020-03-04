@@ -8,9 +8,8 @@ import {MessageService} from './message.service';
   providedIn: 'root'
 })
 export class VillianService {
-
+  //swapped out for this async operation
   getVillians(): Observable<Villian[]> {
-    this.messageService.add('VillianService: fetched villian');
     return of(VILLIANS);
   }
 
