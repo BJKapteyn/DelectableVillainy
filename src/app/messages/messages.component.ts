@@ -17,14 +17,16 @@ export class MessagesComponent implements OnInit {
 
     messageView.className = 'message';
     messageView.style.display = "block";
+
     let timeout1 = setTimeout(() => {
       messageView.className = 'messageNone';
-
     }, fadeTime);
+
     let timeout2 = setTimeout(() => {
       messageView.style.display = "none";
-    }, fadeTime + 2000)
-    let timeouts = [timeout1, timeout2]
+    }, fadeTime + 2000);
+
+    let timeouts = [timeout1, timeout2];
     return timeouts;
   }
 
