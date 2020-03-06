@@ -10,9 +10,14 @@ export class MessagesComponent implements OnInit {
 
   constructor(public messageService: MessageService) { }
 
+  static timeouts: NodeJS.Timeout[];
 
-  static fade(fadeTime: number): NodeJS.Timeout[] {
+  public static fade(fadeTime: number): void {
     let messageView = document.getElementById('messageView');
+
+    if(this.timeouts) {
+      this.timeouts.forEach(x => clearTimeout(x));
+    }
 
     messageView.className = 'message';
     messageView.style.display = "block";
@@ -25,8 +30,7 @@ export class MessagesComponent implements OnInit {
       messageView.style.display = "none";
     }, fadeTime + 2000);
 
-    let timeouts = [timeout1, timeout2];
-    return timeouts;
+    this.timeouts = [timeout1, timeout2];
   }
 
   ngOnInit(): void {

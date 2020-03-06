@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {Villian} from '../villian';
 import {VillianService} from '../villian.service';
 import {MessageService} from '../message.service';
+import {MessagesComponent} from '../messages/messages.component';
 
 @Component({
   selector: 'app-villians',
@@ -22,7 +23,10 @@ export class VilliansComponent implements OnInit {
 
   onSelect(villian: Villian) {
     this.selectedVillian = villian;
-    this.messageService.add(`HeroService: Selected ${villian.name}`);
+    if(this.selectedVillian !== villian) {
+      this.messageService.add(`HeroService: Selected ${villian.name}`);
+    }
+    MessagesComponent.fade(2000);
   }
 
   ngOnInit(): void {
