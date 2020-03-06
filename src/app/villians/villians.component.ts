@@ -10,6 +10,7 @@ import {MessagesComponent} from '../messages/messages.component';
   templateUrl: './villians.component.html',
   styleUrls: ['./villians.component.css']
 })
+
 export class VilliansComponent implements OnInit {
 
   constructor(private villianService: VillianService, private messageService: MessageService) { }
@@ -22,11 +23,9 @@ export class VilliansComponent implements OnInit {
   }
 
   onSelect(villian: Villian) {
-    debugger;
     if(this.selectedVillian != villian) {
       this.messageService.add(`HeroService: Selected ${villian.name}`);
     }
-
     this.selectedVillian = villian;
     MessagesComponent.fade(2000);
   }
