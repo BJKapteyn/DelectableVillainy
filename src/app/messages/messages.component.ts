@@ -13,6 +13,7 @@ export class MessagesComponent implements OnInit {
   static timeouts: NodeJS.Timeout[];
 
   public static fade(fadeTime: number): void {
+    debugger;
     let messageView = document.getElementById('messageView');
 
     if(this.timeouts) {
@@ -25,7 +26,7 @@ export class MessagesComponent implements OnInit {
     let timeout1 = setTimeout(() => {
       messageView.className = 'messageNone';
     }, fadeTime);
-
+    //set display
     let timeout2 = setTimeout(() => {
       messageView.style.display = "none";
     }, fadeTime + 2000);

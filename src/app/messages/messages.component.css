@@ -20,7 +20,6 @@ div.message, .messageNone {
   animation-direction: forwards;
   animation-name: fadeIn;
   animation-duration: 1s;
-  display: none;
 }
 
 .messageNone {

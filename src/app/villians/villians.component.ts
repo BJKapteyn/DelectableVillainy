@@ -22,10 +22,12 @@ export class VilliansComponent implements OnInit {
   }
 
   onSelect(villian: Villian) {
-    this.selectedVillian = villian;
-    if(this.selectedVillian !== villian) {
+    debugger;
+    if(this.selectedVillian != villian) {
       this.messageService.add(`HeroService: Selected ${villian.name}`);
     }
+
+    this.selectedVillian = villian;
     MessagesComponent.fade(2000);
   }
 

@@ -10,7 +10,6 @@ import {MessageService} from './message.service';
 export class VillianService {
 
   getVillians(): Observable<Villian[]> {
-    this.messageService.add('VillianService: fetched villian');
     return of(VILLIANS);
   }
 
