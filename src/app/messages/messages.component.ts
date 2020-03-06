@@ -10,7 +10,6 @@ export class MessagesComponent implements OnInit {
 
   constructor(public messageService: MessageService) { }
 
-<<<<<<< HEAD
 
   static fade(fadeTime: number): NodeJS.Timeout[] {
     let messageView = document.getElementById('messageView');
@@ -30,8 +29,6 @@ export class MessagesComponent implements OnInit {
     return timeouts;
   }
 
-=======
->>>>>>> parent of d9a43a4... added message fade in and out functionality
   ngOnInit(): void {
   }
 
