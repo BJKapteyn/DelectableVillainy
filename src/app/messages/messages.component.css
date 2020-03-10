@@ -1,10 +1,11 @@
-div.message, .messageNone {
+div.message, .messageNone, #messageView {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background-color: rgba(0,0,0,0.6);
   border-radius: 10px;
   color: white;
+  display: none;
 }
 
 @keyframes fadeIn {
