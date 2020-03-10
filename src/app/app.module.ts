@@ -2,17 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { VilliansComponent } from './villians/villians.component';
+import { VillainsComponent } from './villains/villains.component';
 
 import { FormsModule } from '@angular/forms';
-import { VillianDetailComponent } from './villian-detail/villian-detail.component';
+import { VillainDetailComponent } from './villain-detail/villain-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VilliansComponent,
-    VillianDetailComponent,
+    VillainsComponent,
+    VillainDetailComponent,
     MessagesComponent
   ],
   imports: [

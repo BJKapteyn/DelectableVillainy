@@ -1,0 +1,14 @@
+<app-villain-detail [villain]="selectedVillain"></app-villain-detail>
+<h2>The Villains:</h2>
+<ul class="villains">
+  <!--changes class to 'selected' when a villain is clicked on-->
+  <li class="unselected" [class.selected]="villain === selectedVillain" *ngFor="let villain of villains" (click)="onSelect(villain)">
+    <div class="villainDetails">
+      <h1>{{villain.name}}</h1>
+      <span class="badge">{{villain.id}}</span>
+      <p class="description"></p>
+    </div>
+  </li>
+
+</ul>
+

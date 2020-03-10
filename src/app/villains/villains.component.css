@@ -1,10 +1,10 @@
-.villians {
+.villains {
   padding: 0px;
   margin: auto;
   text-align: center;
 }
 
-.villians li.unselected {
+.villains li.unselected {
   cursor: pointer;
   list-style-type: none;
   border: 2px solid rgb(250, 90, 90);
@@ -19,13 +19,13 @@
   vertical-align: top;
 }
 
-.villians li.selected {
+.villains li.selected {
   animation-name: none;
   background-color: rgba(0,0,0,0.1);
   border: 2px solid rgb(249, 41, 41);
 }
 
-.villians li.selected div h1 {
+.villains li.selected div h1 {
   background-color: rgb(249, 41, 41);
   animation-name: none;
 }
@@ -50,25 +50,25 @@
   to {background-color: rgb(250, 90, 90);}
 }
 
-.villianDetails h1{
+.villainDetails h1{
   animation-name: redBackgroundFadeOut;
   animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
 
-.villians li:hover .villianDetails h1 {
+.villains li:hover .villainDetails h1 {
   animation-name: redBackgroundFadeIn;
   animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
 
-.villians li:hover {
+.villains li:hover {
   animation-name: redBorderFadeIn;
   animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
 
-.villians h1 {
+.villains h1 {
   width: 100%;
   background-color: rgb(250, 90, 90);
   color: white;
@@ -76,7 +76,7 @@
   text-align: center;
 }
 
-#selectedVillian {
+#selectedVillain {
   height: 100px;
 }
 

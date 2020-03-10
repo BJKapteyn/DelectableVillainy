@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import {Villian} from './villian';
-import {VILLIANS} from './mock-villians';
+import {Villain} from './villain';
+import {VILLAINS} from './mock-villains';
 import {Observable, of} from 'rxjs';
 import {MessageService} from './message.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class VillianService {
+export class VillainService {
 
-  getVillians(): Observable<Villian[]> {
-    return of(VILLIANS);
+  getVillains(): Observable<Villain[]> {
+    return of(VILLAINS);
   }
 
   constructor(public messageService: MessageService) { }

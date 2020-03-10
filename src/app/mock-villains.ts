@@ -1,6 +1,6 @@
-import {Villian} from './villian';
+import {Villain} from './villain';
 
-export const VILLIANS: Villian[] = [
+export const VILLAINS: Villain[] = [
   {
     id: 2,
     name: 'One Shoegore',

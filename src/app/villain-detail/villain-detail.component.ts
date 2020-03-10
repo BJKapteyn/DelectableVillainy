@@ -1,0 +1,18 @@
+import { Component, OnInit, Input } from '@angular/core';
+import {Villain} from '../villain';
+
+@Component({
+  selector: 'app-villain-detail',
+  templateUrl: './villain-detail.component.html',
+  styleUrls: ['./villain-detail.component.css']
+})
+export class VillainDetailComponent implements OnInit {
+
+  constructor() { }
+  //collects Villain info from Villains.component.html template
+  @Input() villain: Villain;
+
+  ngOnInit(): void {
+  }
+
+}
