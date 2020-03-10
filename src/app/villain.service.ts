@@ -14,5 +14,9 @@ export class VillainService {
     return of(VILLAINS);
   };
 
+  getVillain(URI: string): Observable<Villain> {
+    return of(VILLAINS.find(villain => villain.URI == URI));
+  }
+
   constructor(public messageService: MessageService) { };
 }
