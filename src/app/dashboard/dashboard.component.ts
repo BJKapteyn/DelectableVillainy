@@ -15,11 +15,16 @@ export class DashboardComponent implements OnInit {
   villains: Villain[];
 
   //grab the top 5 villians based off id, in the future it will be based off of a stat
+
+  ngOnInit(): void {
+    this.getTopVillains();
+  }
+
   getTopVillains(): void {
     try {
       this.villainService.getVillains()
                          .subscribe(topVillains => this.villains = topVillains.sort(villain => villain.id)
-                                                                              .slice(1, 5));
+                                                                              .slice(1, 6));
     }
     catch(e) {
       this.messageService.add("Could not retrieve top villains. (dashboard.component.ts)");
@@ -27,8 +32,4 @@ export class DashboardComponent implements OnInit {
     }
 
   }
-
-  ngOnInit(): void {
-  }
-
 }

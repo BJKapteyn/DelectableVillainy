@@ -1,6 +1,11 @@
 <h3>Top 5 Villains:</h3>
 <ul>
-  <li *ngFor="let villain of villains">
-    <h4>{{villain.name}}</h4>
+  <li>
+    <a routerLink="/detail/{{villains[0].URI}}">{{villains[0].name}}</a>
+  </li>
+  <li *ngFor="let villain of villains | slice:1; let i = index;" class="topTen">
+    <a routerLink="/detail/{{villain.URI}}">
+      <h4>{{villain.name}}</h4>
+    </a>
   </li>
 </ul>
