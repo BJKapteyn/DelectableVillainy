@@ -1,7 +1,8 @@
+<!--here is where the @input villain property is bound in the villain detail component-->
 <app-villain-detail [villain]="selectedVillain"></app-villain-detail>
 <h2>The Villains:</h2>
 <ul class="villains">
-  <!--changes class to 'selected' when a villain is clicked on-->
+  <!--changes class to 'selected' when a villain is clicked on/villain and selectedVillain are the same-->
   <li class="unselected" [class.selected]="villain === selectedVillain" *ngFor="let villain of villains" (click)="onSelect(villain)">
     <div class="villainDetails">
       <h1>{{villain.name}}</h1>
