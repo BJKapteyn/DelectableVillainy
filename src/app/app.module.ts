@@ -8,13 +8,15 @@ import { FormsModule } from '@angular/forms';
 import { VillainDetailComponent } from './villain-detail/villain-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VillainsComponent,
     VillainDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
