@@ -7,11 +7,12 @@ import {MessageService} from './message.service';
 @Injectable({
   providedIn: 'root'
 })
+
 export class VillainService {
 
   getVillains(): Observable<Villain[]> {
     return of(VILLAINS);
-  }
+  };
 
-  constructor(public messageService: MessageService) { }
+  constructor(public messageService: MessageService) { };
 }
