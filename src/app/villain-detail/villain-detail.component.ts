@@ -31,7 +31,6 @@ export class VillainDetailComponent implements OnInit {
   //paramMap is a dictionary of route parameter values extracted from the URL and URI is the key as per villain.ts
   //
   getVillain(): void {
-    debugger;
     const villainName = this.route.snapshot.paramMap.get('URI');
     this.villainService.getVillain(villainName).subscribe(villain => this.villain = villain);
   }

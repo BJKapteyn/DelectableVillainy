@@ -6,8 +6,10 @@
   <li class="unselected" [class.selected]="villain === selectedVillain" *ngFor="let villain of villains" (click)="onSelect(villain)">
     <div class="villainDetails">
       <h1>{{villain.name}}</h1>
-      <span class="badge">{{villain.id}}</span>
-      <p class="description"></p>
+      <div class="imageContainer">
+        <img [src]="villain.imageLocation" />
+
+      </div>
     </div>
   </li>
 

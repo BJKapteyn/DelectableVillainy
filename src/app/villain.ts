@@ -3,4 +3,5 @@ export interface Villain {
   name: string;
   description: string;
   URI: string;
+  imageLocation: string;
 }
