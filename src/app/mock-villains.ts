@@ -16,7 +16,7 @@ export const VILLAINS: Villain[] = [
     description: 'Once a master of the culinary arts, Beast took the law into his own twisted hands after someone "popped" all of' +
                  ' his bread.',
     URI: 'beastwellington',
-    imageLocation: 'assets/VillainDrawings/BeastWellington.jpeg'
+    imageLocation: 'assets/VillainDrawings/BeastWellington.jpg'
   },
   {
     id: 4,

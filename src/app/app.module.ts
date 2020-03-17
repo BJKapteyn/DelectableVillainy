@@ -9,6 +9,7 @@ import { VillainDetailComponent } from './villain-detail/villain-detail.componen
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { VillainBlowupViewComponent } from './villain-blowup-view/villain-blowup-view.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     VillainsComponent,
     VillainDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    VillainBlowupViewComponent
   ],
   imports: [
     BrowserModule,
