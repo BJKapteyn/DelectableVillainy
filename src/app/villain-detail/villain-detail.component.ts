@@ -13,7 +13,7 @@ import {Villain} from '../villain';
 export class VillainDetailComponent implements OnInit {
 
   constructor(
-    //holds information about the rout
+    //holds information about the route
     private route: ActivatedRoute,
     private villainService: VillainService,
     //service for interacting with the browser

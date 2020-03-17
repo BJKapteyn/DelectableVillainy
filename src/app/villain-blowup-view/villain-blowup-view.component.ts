@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Villain} from '../villain';
+import {VillainService} from '../villain.service';
 
 @Component({
   selector: 'app-villain-blowup-view',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VillainBlowupViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    villain: Villain,
+    villainService: VillainService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  @Input() villain: Villain;
 }

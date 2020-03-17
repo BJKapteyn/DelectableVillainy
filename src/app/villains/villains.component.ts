@@ -13,7 +13,10 @@ import {MessagesComponent} from '../messages/messages.component';
 
 export class VillainsComponent implements OnInit {
 
-  constructor(private villainService: VillainService, private messageService: MessageService) { }
+  constructor(
+    private villainService: VillainService,
+    private messageService: MessageService
+    ) { }
 
   villains: Villain[];
   selectedVillain: Villain;
