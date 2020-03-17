@@ -1,1 +1,11 @@
-<p>villain-blowup-view works!</p>
+<div *ngIf="this.villainBlowup">
+  <!--If villainBlowup exists, the animation won't happen-->
+  <div id="flexContainer" class="notSelectedYet" [class.alreadySelected]="this.villainBlowup">
+    <div class="imageContainer">
+      <img *ngIf="this.villainBlowup" [src]="this.villainBlowup.imageLocation" />
+    </div>
+    <div class="infoContainer">
+
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
-<!--here is where the @input villain property is bound in the villain detail component-->
-<app-villain-detail [villain]="selectedVillain"></app-villain-detail>
-<app-villain-blowup-view [villain="selectedVillain"]></app-villain-blowup-view>
+<!--here is where the @input villain property is bound in the villain blowup view component-->
+<app-villain-blowup-view *ngIf="selectedVillain" [villainBlowup]="selectedVillain"></app-villain-blowup-view>
+
 <h2>The Villains</h2>
 <ul class="villains">
   <!--changes class to 'selected' when a villain is clicked on/villain and selectedVillain are the same-->
@@ -9,10 +9,8 @@
       <h1>{{villain.name}}</h1>
       <div class="imageContainer">
         <img [src]="villain.imageLocation" />
-
       </div>
     </div>
   </li>
-
 </ul>
 

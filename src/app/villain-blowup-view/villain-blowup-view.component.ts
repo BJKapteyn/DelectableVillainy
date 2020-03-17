@@ -10,12 +10,11 @@ import {VillainService} from '../villain.service';
 export class VillainBlowupViewComponent implements OnInit {
 
   constructor(
-    villain: Villain,
-    villainService: VillainService
+    private villainService: VillainService
   ) { }
 
   ngOnInit(): void {
   }
 
-  @Input() villain: Villain;
+  @Input() villainBlowup: Villain;
 }
