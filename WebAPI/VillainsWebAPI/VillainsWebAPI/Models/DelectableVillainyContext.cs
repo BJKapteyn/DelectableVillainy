@@ -1,34 +1,37 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 namespace VillainsWebAPI.Models
 {
     public partial class DelectableVillainyContext : DbContext
     {
-        public DelectableVillainyContext()
+        IConfiguration Configuration;
+        public DelectableVillainyContext(IConfiguration configuration)
         {
+            this.Configuration = configuration;
         }
 
         public DelectableVillainyContext(DbContextOptions<DelectableVillainyContext> options)
             : base(options)
         {
         }
-
-        public virtual DbSet<Villains> Villains { get; set; }
+        
+        public virtual DbSet<Villain> Villains { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=LAPTOP-T6VP6L6I\\SQLEXPRESS;Database=DelectableVillainy;Trusted_Connection=True;");
+                //warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("DefualtConnection"));
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Villains>(entity =>
+            modelBuilder.Entity<Villain>(entity =>
             {
                 entity.HasKey(e => e.VillainId)
                     .HasName("PK__villains__8D6B3A5AB7C6665B");
@@ -73,7 +76,6 @@ namespace VillainsWebAPI.Models
 
             OnModelCreatingPartial(modelBuilder);
         }
-
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
