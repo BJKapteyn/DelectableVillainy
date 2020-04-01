@@ -12,7 +12,7 @@ namespace VillainsWebAPI.Models
             
         }
 
-        IConfiguration Configuration { get; }
+        private readonly IConfiguration Configuration;
         public DelectableVillainyContext(IConfiguration configuration)
         {
             this.Configuration = configuration;
