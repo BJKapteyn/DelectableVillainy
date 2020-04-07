@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillainsWebAPI", "VillainsWebAPI\VillainsWebAPI.csproj", "{350B90FD-583A-45E4-A8A9-234F6FA69678}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VillainsWebAPI", "VillainsWebAPI\VillainsWebAPI.csproj", "{350B90FD-583A-45E4-A8A9-234F6FA69678}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillainsWebAPIUnitTests", "VillainsWebAPIUnitTests\VillainsWebAPIUnitTests.csproj", "{6FA60A03-AE51-4B9F-A60D-5C9834A942D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{350B90FD-583A-45E4-A8A9-234F6FA69678}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{350B90FD-583A-45E4-A8A9-234F6FA69678}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{350B90FD-583A-45E4-A8A9-234F6FA69678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA60A03-AE51-4B9F-A60D-5C9834A942D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA60A03-AE51-4B9F-A60D-5C9834A942D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA60A03-AE51-4B9F-A60D-5C9834A942D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA60A03-AE51-4B9F-A60D-5C9834A942D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
