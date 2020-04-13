@@ -17,9 +17,9 @@ namespace VillainsWebAPI
       int defense = opponentEgo;
       Random rng = new Random();
       int rngModifier = rng.Next(1, 5);
-      double defenseModifier = opponentEgo * .5;
-
       attackModifier += rngModifier;
+
+      double defenseModifier = opponentEgo * .5;
 
       result = baseAttack + attackModifier;
 

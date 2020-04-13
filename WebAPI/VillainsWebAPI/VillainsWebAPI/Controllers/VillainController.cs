@@ -28,5 +28,17 @@ namespace VillainsWebAPI.Controllers
         return villains;
       }
     }
+
+    //public IActionResult Attack(int mass)
+    //{
+    //  int attackDamage;
+    //  if(mass > 0)
+    //  {
+    //    //change once defense is implemented
+    //    attackDamage = StatCalculator.Attack(mass, 5);
+    //    ControllerContext.HttpContext.Response.WriteAsync("hey");
+        
+    //  }
+    //}
   }
 }
