@@ -30,24 +30,12 @@ namespace VillainsWebAPI.Controllers
       }
     }
 
-    [HttpGet("Attack")]
-    public IActionResult Attack(int mass)
+    [HttpGet("attack/{mass}")]
+    [HttpGet("attack")]
+    public IActionResult Attack(string mass, [FromQuery] string opponentEgo)
     {
-      //int attackDamage;
-      //string k;
-      //if (mass > 0)
-      //{
-      //  //change once defense is implemented
-      //  attackDamage = StatCalculator.Attack(mass, 5);
-      //  k = JsonConvert.SerializeObject(attackDamage);
-      //}
-      //else
-      //{
-      //  k = JsonConvert.SerializeObject("Yah blew it");
-      //}
-      //return Json;
-      string massStr = mass.ToString();
-      return Content(massStr);
+      string k;
+      return Content("youoooooooouuuuuuuuuuuuuuuuuuuuuu" + mass);
     }
   }
 }

@@ -100,7 +100,8 @@ namespace VillainsWebAPI
       app.UseEndpoints(endpoints =>
       {
         endpoints.MapControllers();
-        endpoints.MapControllerRoute(name: "villain", pattern: "{controller=Villain}/{action=Attack}/{mass?}");
+        //endpoints.MapDefaultControllerRoute();
+        //endpoints.MapControllerRoute(name: "villain", pattern: "{controller=Villain}/{action=Attack}/{mass?}");
       });
     }
   }
