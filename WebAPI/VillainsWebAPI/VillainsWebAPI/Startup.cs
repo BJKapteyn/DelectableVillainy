@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using VillainsWebAPI.Models;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace VillainsWebAPI
 {
@@ -64,8 +65,9 @@ namespace VillainsWebAPI
       services.AddSingleton<IConfiguration>(Configuration);
       services.AddDbContext<DelectableVillainyContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("VillainDBConnectionString")));
-      //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
       services.AddControllers();
+      //add Json format support
+      services.AddControllers().AddNewtonsoftJson();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -75,9 +77,9 @@ namespace VillainsWebAPI
       //map HandleMapTest
       app.Map("/maptest", HandleMapTest);
       //DEMO ONLY, TODO: move to villain controller
-      app.MapWhen(context =>
-        context.Request.Query.ContainsKey("attack"), HandleAttack
-      );
+      //app.MapWhen(context =>
+      //  context.Request.Query.ContainsKey("attack"), HandleAttack
+      //);
 
       if (env.IsDevelopment())
       {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using VillainsWebAPI.Models;
 
 namespace VillainsWebAPI.Controllers
@@ -29,16 +30,24 @@ namespace VillainsWebAPI.Controllers
       }
     }
 
-    //public IActionResult Attack(int mass)
-    //{
-    //  int attackDamage;
-    //  if(mass > 0)
-    //  {
-    //    //change once defense is implemented
-    //    attackDamage = StatCalculator.Attack(mass, 5);
-    //    ControllerContext.HttpContext.Response.WriteAsync("hey");
-        
-    //  }
-    //}
+    [HttpGet("Attack")]
+    public IActionResult Attack(int mass)
+    {
+      //int attackDamage;
+      //string k;
+      //if (mass > 0)
+      //{
+      //  //change once defense is implemented
+      //  attackDamage = StatCalculator.Attack(mass, 5);
+      //  k = JsonConvert.SerializeObject(attackDamage);
+      //}
+      //else
+      //{
+      //  k = JsonConvert.SerializeObject("Yah blew it");
+      //}
+      //return Json;
+      string massStr = mass.ToString();
+      return Content(massStr);
+    }
   }
 }
