@@ -34,8 +34,25 @@ namespace VillainsWebAPI.Controllers
     [HttpGet("attack")]
     public IActionResult Attack(string mass, [FromQuery] string opponentEgo)
     {
-      string k;
-      return Content("youoooooooouuuuuuuuuuuuuuuuuuuuuu" + mass);
+      string result = "";
+      int massInt = 0;
+      int opponentEgoInt = 0;
+      bool massParseSuccess = int.TryParse(mass, out massInt);
+      bool egoParseSuccess = int.TryParse(opponentEgo, out opponentEgoInt);
+
+      if(massParseSuccess && egoParseSuccess)
+      {
+        int attackDamage = StatCalculator.Attack(massInt, opponentEgoInt);
+
+        result = $"You did {attackDamage} damage. ALL ROIGHT";
+      }
+      else
+      {
+        result = "Ya Blew It";
+      }
+
+
+      return Content(result);
     }
   }
 }
