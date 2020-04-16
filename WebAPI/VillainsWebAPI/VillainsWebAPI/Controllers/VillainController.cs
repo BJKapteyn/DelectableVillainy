@@ -20,13 +20,25 @@ namespace VillainsWebAPI.Controllers
     }
 
     [HttpGet]
-    public IEnumerable<string> Get()
+    [HttpGet("/{villain}")]
+    public IActionResult Get(string villain)
     {
-      
       using (VillainDB)
       {
-        var villains = VillainDB.Villains.Select(x => x.Name).ToList();
-        return villains;
+        try
+        {
+          string villainName = Formatter.DashToSpace(villain);
+
+          Villain v = VillainDB.Villains.Single(x => x.Name == villainName);
+
+          string jsonVillain = JsonConvert.SerializeObject(v);
+
+          return Content(jsonVillain);
+        }
+        catch(Exception e)
+        {
+          return Content("Sorry I couldn't find that Villain");
+        }
       }
     }
 
@@ -37,6 +49,7 @@ namespace VillainsWebAPI.Controllers
       string result = "";
       int massInt = 0;
       int opponentEgoInt = 0;
+      //
       bool massParseSuccess = int.TryParse(mass, out massInt);
       bool egoParseSuccess = int.TryParse(opponentEgo, out opponentEgoInt);
 
