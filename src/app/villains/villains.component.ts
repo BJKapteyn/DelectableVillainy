@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import {Villain} from '../villain';
 import {VillainService} from '../villain.service';
 import {MessageService} from '../message.service';
@@ -32,8 +31,8 @@ export class VillainsComponent implements OnInit {
       this.messageService.add(`HeroService: Selected ${villain.name}`);
     }
     this.selectedVillain = villain;
-    //adds fade in and out effect on messages. if you change the timing here, change it in the messagesNone
-    //class in messages.component.css as well. Ex. .fade(3000) requires animation-duration of 3s in messagesNone.
+    //adds fade in and out effect on messages. if you change the timing here, change it in the messagesNone rule set
+    //in messages.component.css as well. Ex. .fade(3000) requires animation-duration of 3s in messagesNone.
     MessagesComponent.fade(2000);
   }
 

@@ -3,6 +3,7 @@ import {Villain} from '../villain';
 import {VillainService} from '../villain.service';
 import {MessageService} from '../message.service';
 
+//define aspects of the compenent
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

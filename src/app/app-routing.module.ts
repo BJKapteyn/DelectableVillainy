@@ -7,6 +7,7 @@ import {VillainDetailComponent} from './villain-detail/villain-detail.component'
 //path is the actual string placed as the URL and component is the component that will be displayed
 //when the string is entered. Ex. www.domain.com/villains will display VillainsComponent.
 const routes: Routes = [
+  //with no URI, direct to dashboard
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'villains', component: VillainsComponent},
   {path: 'dashboard', component: DashboardComponent },
