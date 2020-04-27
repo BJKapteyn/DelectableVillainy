@@ -13,7 +13,6 @@ export class MessagesComponent implements OnInit {
   static timeouts: NodeJS.Timeout[];
 
   public static fade(fadeTime: number): void {
-    debugger;
     let messageView = document.getElementById('messageView');
 
     if(this.timeouts) {
