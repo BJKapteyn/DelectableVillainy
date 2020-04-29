@@ -25,11 +25,16 @@ export class VillainBlowupViewComponent implements OnInit {
     debugger;
     if(this.isLoaded){
       let element = document.getElementById('titleCardText');
+      let parent = document.getElementById('infoContainer');
       let newElement = document.createElement('h2');
       newElement.setAttribute('id', 'titleCardText');
       newElement.innerText = this.villainBlowup.name;
-      element.parentNode.appendChild(newElement);
-      element.parentNode.removeChild(element);
+      newElement.style.animationName = "titleCard";
+      newElement.style.animationDuration = "2s";
+      newElement.style.animationFillMode = "forward";
+      newElement.style.animationTimingFunction = "cubic-bezier()";
+      parent.appendChild(newElement);
+      parent.removeChild(element);
       document.getElementById('titleCardText').className = "titleCard";
     } else {
       this.isLoaded = true;
