@@ -35,7 +35,7 @@ namespace VillainsWebAPI.Controllers
 
           return Content(jsonVillain);
         }
-        catch(Exception e)
+        catch
         {
           return Content("Sorry I couldn't find that Villain");
         }
