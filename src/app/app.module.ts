@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { VillainsComponent } from './villains/villains.component';
@@ -10,6 +11,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VillainBlowupViewComponent } from './villain-blowup-view/villain-blowup-view.component';
+import { BackendTestComponent } from './backend-test/backend-test.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,15 @@ import { VillainBlowupViewComponent } from './villain-blowup-view/villain-blowup
     VillainDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    VillainBlowupViewComponent
+    VillainBlowupViewComponent,
+    BackendTestComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //HttpClientModule needs to be after BrowserModule.
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

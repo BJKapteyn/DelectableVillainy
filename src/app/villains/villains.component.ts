@@ -4,6 +4,7 @@ import {VillainService} from '../villain.service';
 import {MessageService} from '../message.service';
 import {MessagesComponent} from '../messages/messages.component';
 import {VillainBlowupViewComponent} from '../villain-blowup-view/villain-blowup-view.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-villains',
@@ -24,6 +25,10 @@ export class VillainsComponent implements OnInit {
   //pulls villain list asynchronously
   getVillains(): void {
     this.villainService.getVillains().subscribe(villains => this.villains = villains);
+  }
+
+  getVillain(villainName: string) {
+
   }
 
   onSelect(villain: Villain) {
