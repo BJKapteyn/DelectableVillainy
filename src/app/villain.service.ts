@@ -13,6 +13,7 @@ import {MessageService} from './message.service';
 export class VillainService {
   //options to send out with the http request
   options: {
+    headers?: HttpHeaders | {[header: string]: string | string[]}
     //specifies how much or the response to return
     observe?: 'body',
     reportProgress?: boolean,
@@ -33,9 +34,10 @@ export class VillainService {
     return of(VILLAINS.find(villain => villain.URI == URI));
   }
 
+
+
   //for now format the villain name to 'first-last' backend is expecting names separated with '-' 5/4/2020
   getVillainFromAPI(villainName: string): Observable<Object>  {
-    debugger;
     const URL = "https://localhost:44313" + "/" + villainName;
 
     return this.http.get(URL, this.options);

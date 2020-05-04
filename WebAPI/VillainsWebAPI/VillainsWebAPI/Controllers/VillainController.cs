@@ -33,7 +33,7 @@ namespace VillainsWebAPI.Controllers
 
           string jsonVillain = JsonConvert.SerializeObject(v);
 
-          return Content(jsonVillain);
+          return Ok(jsonVillain);
         }
         catch
         {

@@ -61,6 +61,15 @@ namespace VillainsWebAPI
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+      //Allow Cors access from front end
+      services.AddCors(options =>
+      {
+        options.AddPolicy(name: "AllowSpecificOrigins",
+                          builder =>
+                          {
+                            builder.WithOrigins("http://localhost:4200").AllowAnyHeader();
+                          });
+      });
       //"Server=LAPTOP-T6VP6L6I\SQLEXPRESS;Database=DelectableVillainy;Trusted_Connection=True;"
       services.AddSingleton<IConfiguration>(Configuration);
       services.AddDbContext<DelectableVillainyContext>(options =>
@@ -92,6 +101,9 @@ namespace VillainsWebAPI
 
       //use routing defined by the app
       app.UseRouting();
+
+      //use the allowspecificorigins defined in the configureservices
+      app.UseCors("AllowSpecificOrigins");
 
       //authorize user
       app.UseAuthorization();
