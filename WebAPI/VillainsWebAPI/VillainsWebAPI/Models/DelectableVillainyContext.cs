@@ -19,7 +19,7 @@ namespace VillainsWebAPI.Models
 
         public virtual DbSet<Abilities> Abilities { get; set; }
         public virtual DbSet<BaseStats> BaseStats { get; set; }
-        public virtual DbSet<Villains> Villains { get; set; }
+        public virtual DbSet<Villain> Villains { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -96,7 +96,7 @@ namespace VillainsWebAPI.Models
                     .HasConstraintName("FK_villain_id");
             });
 
-            modelBuilder.Entity<Villains>(entity =>
+            modelBuilder.Entity<Villain>(entity =>
             {
                 entity.HasKey(e => e.VillainId)
                     .HasName("PK__villains__8D6B3A5AB7C6665B");

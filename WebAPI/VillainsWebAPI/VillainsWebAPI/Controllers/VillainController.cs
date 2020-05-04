@@ -42,6 +42,7 @@ namespace VillainsWebAPI.Controllers
       }
     }
 
+
     [HttpGet("attack/{mass}")]
     [HttpGet("attack")]
     public IActionResult Attack(string mass, [FromQuery] string opponentEgo)

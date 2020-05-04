@@ -12,6 +12,6 @@ namespace VillainsWebAPI.Models
         public short? Level { get; set; }
         public string Description { get; set; }
 
-        public virtual Villains Villain { get; set; }
+        public virtual Villain Villain { get; set; }
     }
 }

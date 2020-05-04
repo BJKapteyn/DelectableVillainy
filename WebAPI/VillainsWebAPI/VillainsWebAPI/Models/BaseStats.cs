@@ -14,6 +14,6 @@ namespace VillainsWebAPI.Models
         public int SelfConfidence { get; set; }
         public int Trickery { get; set; }
 
-        public virtual Villains Villain { get; set; }
+        public virtual Villain Villain { get; set; }
     }
 }

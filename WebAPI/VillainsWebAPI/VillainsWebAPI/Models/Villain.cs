@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace VillainsWebAPI.Models
 {
-    public partial class Villains
+    public partial class Villain
     {
-        public Villains()
+        public Villain()
         {
             Abilities = new HashSet<Abilities>();
             BaseStats = new HashSet<BaseStats>();
