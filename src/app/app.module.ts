@@ -11,6 +11,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VillainBlowupViewComponent } from './villain-blowup-view/villain-blowup-view.component';
+import { BackendTestComponent } from './backend-test/backend-test.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { VillainBlowupViewComponent } from './villain-blowup-view/villain-blowup
     VillainDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    VillainBlowupViewComponent
+    VillainBlowupViewComponent,
+    BackendTestComponent
   ],
   imports: [
     BrowserModule,
