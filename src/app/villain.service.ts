@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import {Villain} from './villain';
 import {VILLAINS} from './mock-villains';
 import {Observable, of} from 'rxjs';
