@@ -35,7 +35,8 @@ export class VillainService {
 
   //for now format the villain name to 'first-last' backend is expecting names separated with '-' 5/4/2020
   getVillainFromAPI(villainName: string): Observable<Object>  {
-    const URL = this.configURL['villainsURL'] + "/" + villainName;
+    debugger;
+    const URL = "https://localhost:44313" + "/" + villainName;
 
     return this.http.get(URL, this.options);
 

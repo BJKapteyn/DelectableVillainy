@@ -20,7 +20,7 @@ export class BackendTestComponent implements OnInit {
   getVillain(villain: string) {
     let newVillain: Villain;
 
-    this.villainService.getVillain(villain).subscribe(val => console.log(val));
+    this.villainService.getVillainFromAPI(villain).subscribe(val => console.log(val));
 
   }
 
