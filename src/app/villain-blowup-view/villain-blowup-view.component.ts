@@ -21,6 +21,7 @@ export class VillainBlowupViewComponent implements OnInit {
   }
 
   //whenever there is a change in the @Input() properties, reasign the class to reset the animation
+  //TODO: figure out how to get the animation to replay
   ngOnChanges() {
     debugger;
     if(this.isLoaded){
