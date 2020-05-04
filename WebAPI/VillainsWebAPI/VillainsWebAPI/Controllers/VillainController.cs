@@ -42,6 +42,7 @@ namespace VillainsWebAPI.Controllers
       }
     }
 
+
     [HttpGet("attack/{mass}")]
     [HttpGet("attack")]
     public IActionResult Attack(string mass, [FromQuery] string opponentEgo)
@@ -59,9 +60,17 @@ namespace VillainsWebAPI.Controllers
 
         result = $"You did {attackDamage} damage. ALL ROIGHT";
       }
+      else if(massParseSuccess && !egoParseSuccess)
+      {
+        result = "Ego was not in correct format";
+      }
+      else if(!massParseSuccess && egoParseSuccess)
+      {
+        result = "Mass was not in correct format";
+      }
       else
       {
-        result = "Ya Blew It";
+        result = "Both mass and ego were not in correct format";
       }
 
 
