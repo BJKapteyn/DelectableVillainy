@@ -15,9 +15,13 @@ export class BackendTestComponent implements OnInit {
   constructor(private villainService: VillainService) { }
 
   BackEndVillain: Villain;
+  TestString: string;
 
   getVillain(villain: string) {
-    let villainJson = this.villainService.getVillain(villain);
+    let newVillain: Villain;
+
+    this.villainService.getVillain(villain).subscribe(val => console.log(val));
+
   }
 
   ngOnInit(): void {
