@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Villain} from './villain';
+import {Http, Response} from '@angular/http';
+import {HttpClient, HttpHeaders, HttpParams, HttpClientModule} from '@angular/common/http';
+import {IVillain, Villain} from './villain';
 import {VILLAINS} from './mock-villains';
 import {Observable, of, throwError} from 'rxjs';
-import {catchError, retry} from 'rxjs/operators';
+import {catchError, retry, map} from 'rxjs/operators';
 import {MessageService} from './message.service';
 
 @Injectable({
@@ -26,24 +27,24 @@ export class VillainService {
   //all back end URLs for API calls are stored here
   configURL = 'assets/config/json';
 
-  getVillains(): Observable<Villain[]> {
+  getVillains(): Observable<IVillain[]> {
     return of(VILLAINS);
   };
 
-  getVillain(URI: string): Observable<Villain> {
+  getVillain(URI: string): Observable<IVillain> {
     return of(VILLAINS.find(villain => villain.URI == URI));
   }
 
 
 
   //for now format the villain name to 'first-last' backend is expecting names separated with '-' 5/4/2020
-  getVillainFromAPI(villainName: string): Observable<Object>  {
+  getVillainFromAPI(villainName: string)  {
     const URL = "https://localhost:44313" + "/" + villainName;
 
-    return this.http.get(URL, this.options);
+    return this.http.get(URL).map();
 
   }
 
   constructor(public messageService: MessageService,
-    private http: HttpClient) { };
+    private http: Http) { };
 }

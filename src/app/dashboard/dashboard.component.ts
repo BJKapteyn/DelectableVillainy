@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Villain} from '../villain';
+import {IVillain} from '../villain';
 import {VillainService} from '../villain.service';
 import {MessageService} from '../message.service';
 
@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private villainService: VillainService, public messageService: MessageService) { }
 
-  villains: Villain[];
+  villains: IVillain[];
 
   //grab the top 5 villians based off id, in the future it will be based off of a stat
 

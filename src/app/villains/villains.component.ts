@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Villain} from '../villain';
+import {IVillain} from '../villain';
 import {VillainService} from '../villain.service';
 import {MessageService} from '../message.service';
 import {MessagesComponent} from '../messages/messages.component';
@@ -19,8 +19,8 @@ export class VillainsComponent implements OnInit {
     private messageService: MessageService
     ) { }
 
-  villains: Villain[];
-  selectedVillain: Villain;
+  villains: IVillain[];
+  selectedVillain: IVillain;
 
   //pulls villain list asynchronously
   getVillains(): void {
@@ -31,7 +31,7 @@ export class VillainsComponent implements OnInit {
 
   }
 
-  onSelect(villain: Villain) {
+  onSelect(villain: IVillain) {
     if(this.selectedVillain != villain) {
       this.messageService.add(`HeroService: Selected ${villain.name}`);
     }

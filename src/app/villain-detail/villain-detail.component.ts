@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Location} from "@angular/common";
 
 import {VillainService} from '../villain.service';
-import {Villain} from '../villain';
+import {IVillain} from '../villain';
 
 @Component({
   selector: 'app-villain-detail',
@@ -21,7 +21,7 @@ export class VillainDetailComponent implements OnInit {
   ) { }
 
   //collects Villain info from Villains.component.html template
-  @Input() villain: Villain;
+  @Input() villain: IVillain;
 
   ngOnInit(): void {
     this.getVillain();

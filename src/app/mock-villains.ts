@@ -1,7 +1,7 @@
-import {Villain} from './villain';
+import {IVillain} from './villain';
 import {Component} from '@angular/core';
 
-export const VILLAINS: Villain[] = [
+export const VILLAINS: IVillain[] = [
   {
     id: 2,
     name: 'One Shoegore',

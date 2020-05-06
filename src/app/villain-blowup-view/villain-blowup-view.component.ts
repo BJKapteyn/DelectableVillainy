@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import {Villain} from '../villain';
+import {IVillain} from '../villain';
 import {VillainService} from '../villain.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {VillainService} from '../villain.service';
 })
 export class VillainBlowupViewComponent implements OnInit {
 
-  @Input() villainBlowup: Villain;
+  @Input() villainBlowup: IVillain;
 
   isLoaded: boolean = false;
 

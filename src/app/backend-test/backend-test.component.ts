@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Villain} from '../villain';
+import {IVillain, Villain} from '../villain';
 import {VillainService} from '../villain.service';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { stripSummaryForJitFileSuffix } from '@angular/compiler/src/aot/util';
 
 
 @Component({
@@ -16,12 +17,28 @@ export class BackendTestComponent implements OnInit {
 
   BackEndVillain: Villain;
   TestString: string;
+  VillainData: Object;
 
   getVillain(villain: string) {
-    let newVillain: Villain;
+    debugger;
+    //await this.villainService.getVillainFromAPI(villain).subscribe(villainData);
+    let stuff = this.villainService.getVillainFromAPI(villain).subscribe(data =>  {
+      this.BackEndVillain = data;
+    });
 
-    this.villainService.getVillainFromAPI(villain).subscribe(val => console.log(val));
+    console.log(this.BackEndVillain.name);
 
+
+
+    // this.villainService.getVillainFromAPI(villain).subscribe(data => this.BackEndVillain = {
+    //   name: data["Name"],
+    //   description: data["Description"],
+    //   id: data["VillainId"]
+    // });
+  }
+
+  assignVillain(data: Object) {
+    this.VillainData = data;
   }
 
   ngOnInit(): void {
