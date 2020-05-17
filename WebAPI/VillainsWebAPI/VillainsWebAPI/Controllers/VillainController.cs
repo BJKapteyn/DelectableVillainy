@@ -19,17 +19,16 @@ namespace VillainsWebAPI.Controllers
       VillainDB = villainDB;
     }
 
-    [HttpGet]
-    [HttpGet("/{villain}")]
-    public IActionResult Get(string villain)
+    [HttpGet("{villain}")]
+    public IActionResult GetVillain(string villain)
     {
       using (VillainDB)
       {
         try
         {
-          string villainName = Formatter.DashToSpace(villain);
+          // string villainName = Formatter.DashToSpace(villain);
 
-          Villain v = VillainDB.Villains.Single(x => x.Name == villainName);
+          Villain v = VillainDB.Villains.Single(x => x.Name == villain);
 
           string jsonVillain = JsonConvert.SerializeObject(v);
 

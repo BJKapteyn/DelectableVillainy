@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
   getTopVillains(): void {
     try {
       this.villainService.getVillains()
-                         .subscribe(topVillains => this.villains = topVillains.sort(villain => villain.id)
+                         .subscribe(topVillains => this.villains = topVillains.sort(villain => villain.Id)
                                                                               .slice(1, 6));
     }
     catch(e) {

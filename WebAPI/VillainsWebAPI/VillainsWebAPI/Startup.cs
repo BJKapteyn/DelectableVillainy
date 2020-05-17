@@ -74,17 +74,23 @@ namespace VillainsWebAPI
       services.AddSingleton<IConfiguration>(Configuration);
       services.AddDbContext<DelectableVillainyContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("VillainDBConnectionString")));
-      services.AddControllers();
       //add Json format support
-      services.AddControllers().AddNewtonsoftJson();
+      services.AddControllersWithViews().AddNewtonsoftJson();
+
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
- 
+
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
+
+      using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+      {
+        var context = serviceScope.ServiceProvider.GetRequiredService<DelectableVillainyContext>();
+        context.Database.Migrate();
+      }
       //map HandleMapTest
-      app.Map("/maptest", HandleMapTest);
+      /*app.Map("/maptest", HandleMapTest);*/
       //DEMO ONLY, TODO: move to villain controller
       //app.MapWhen(context =>
       //  context.Request.Query.ContainsKey("attack"), HandleAttack
@@ -111,10 +117,15 @@ namespace VillainsWebAPI
       //my defined endpoints ex. endpoints.MapRazorPages() added for an MVC app.
       app.UseEndpoints(endpoints =>
       {
+        endpoints.MapControllerRoute(
+            name: "default","{controller}/{action?}/{id?}");
+      });
+      /*app.UseEndpoints(endpoints =>
+      {
         endpoints.MapControllers();
         //endpoints.MapDefaultControllerRoute();
         //endpoints.MapControllerRoute(name: "villain", pattern: "{controller=Villain}/{action=Attack}/{mass?}");
-      });
+      });*/
     }
   }
 }
