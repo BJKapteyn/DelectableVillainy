@@ -21,12 +21,11 @@ export class BackendTestComponent implements OnInit {
   VillainData: Object;
   name:string;
   getVillain(villain: string) {
-    //await this.villainService.getVillainFromAPI(villain).subscribe(villainData);
     this.villainService.getVillainFromAPI(villain)
         .subscribe(
             (data: Villain) => {
               this.BackEndVillain = data;
-              console.log(this.BackEndVillain.Name);
+              console.log(this.BackEndVillain.FullName);
 
             },
             error => console.log(error)

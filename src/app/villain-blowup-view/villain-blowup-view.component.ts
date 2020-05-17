@@ -29,7 +29,7 @@ export class VillainBlowupViewComponent implements OnInit {
       let parent = document.getElementById('infoContainer');
       let newElement = document.createElement('h2');
       newElement.setAttribute('id', 'titleCardText');
-      newElement.innerText = this.villainBlowup.Name;
+      newElement.innerText = this.villainBlowup.FullName;
       newElement.style.animationName = "titleCard";
       newElement.style.animationDuration = "2s";
       newElement.style.animationFillMode = "forward";

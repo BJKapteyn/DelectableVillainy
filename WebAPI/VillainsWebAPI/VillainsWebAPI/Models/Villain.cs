@@ -1,18 +1,36 @@
 using System;
 using System.Collections.Generic;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace VillainsWebAPI.Models
 {
     public partial class Villain
     {
-        public Villain()
+      public Villain(string firstName, string lastName, string gender, short? age, string nemesis, string hometown, string weaponOfChoice, string background , string description, ICollection<Abilities> abilities, ICollection<BaseStats> baseStats)
+      {
+        FirstName = firstName;
+        LastName = lastName;
+        FullName = $"{FirstName} {LastName}";
+        Gender = gender;
+        Age = age;
+        Nemesis = nemesis;
+        Hometown = hometown;
+        WeaponOfChoice = weaponOfChoice;
+        Background = background;
+        Description = description;
+      }
+
+      public Villain()
         {
-            Abilities = new HashSet<Abilities>();
-            BaseStats = new HashSet<BaseStats>();
         }
 
         public int VillainId { get; set; }
-        public string Name { get; set; }
+
+        public string FullName { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
         public string Gender { get; set; }
         public short? Age { get; set; }
         public string Nemesis { get; set; }
@@ -21,7 +39,13 @@ namespace VillainsWebAPI.Models
         public string WeaponOfChoice { get; set; }
         public string Description { get; set; }
 
-        public virtual ICollection<Abilities> Abilities { get; set; }
-        public virtual ICollection<BaseStats> BaseStats { get; set; }
+        public virtual ICollection<Abilities> Abilities { get; set; } = new HashSet<Abilities>();
+        public virtual ICollection<BaseStats> BaseStats { get; set; } = new HashSet<BaseStats>();
+
+        private string GetFullName()
+        {
+          return $"{FirstName} {LastName}";
+        }
+
     }
 }

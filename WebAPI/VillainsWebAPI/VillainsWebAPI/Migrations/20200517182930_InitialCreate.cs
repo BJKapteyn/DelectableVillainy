@@ -12,7 +12,9 @@ namespace VillainsWebAPI.Migrations
                 {
                     villain_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    fullName = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
+                    firstName = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    lastName = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     gender = table.Column<string>(type: "char(1)", unicode: false, fixedLength: true, maxLength: 1, nullable: true),
                     age = table.Column<short>(type: "smallint", nullable: true),
                     nemesis = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),

@@ -6,9 +6,9 @@
   <!--changes class to 'selected' when a villain is clicked on/villain and selectedVillain are the same-->
   <li class="unselected" [class.selected]="villain === selectedVillain" *ngFor="let villain of villains" (click)="onSelect(villain)">
     <div class="villainDetails">
-      <h1>{{villain.name}}</h1>
+      <h1>{{villain.FullName}}</h1>
       <div class="imageContainer">
-        <img [src]="villain.imageLocation" />
+        <img [src]="villain.ImageLocation" />
       </div>
     </div>
   </li>

@@ -40,7 +40,7 @@ export class VillainService {
   getVillainFromAPI(villainName: string): Observable<Villain>  {
     const URL = "https://localhost:5001/api/villain/" + villainName;
 
-    return this.http.get<Villain>(URL).pipe(
+    return this.http.get<Villain>(URL, this.options).pipe(
       map((data: Villain) => {
         return data;
       }),

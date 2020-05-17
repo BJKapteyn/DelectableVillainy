@@ -29,7 +29,7 @@ export class VillainsComponent implements OnInit {
 
   onSelect(villain: Villain) {
     if(this.selectedVillain != villain) {
-      this.messageService.add(`HeroService: Selected ${villain.Name}`);
+      this.messageService.add(`HeroService: Selected ${villain.FullName}`);
     }
     this.selectedVillain = villain;
     //adds fade in and out effect on messages. if you change the timing here, change it in the messagesNone

@@ -1,7 +1,9 @@
 //interface for the Villains, need to connect to DB
 export interface IVillain {
   Id: number;
-  Name: string;
+  FullName: string;
+  FirstName: string;
+  LastName: string;
   Description: string;
   URI: string;
   ImageLocation: string;
@@ -9,7 +11,9 @@ export interface IVillain {
 
 export class Villain implements IVillain {
   Id: number;
-  Name: string;
+  FullName: string;
+  FirstName: string;
+  LastName: string;
   Description: string;
   URI: string;
   ImageLocation: string;

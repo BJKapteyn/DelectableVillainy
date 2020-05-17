@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using VillainsWebAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using static VillainsWebAPI.DAL.InitializeDb;
 
 namespace VillainsWebAPI
 {
@@ -59,23 +60,25 @@ namespace VillainsWebAPI
     }
 
     // This method gets called by the runtime. Use this method to add services to the container.
-    public void ConfigureServices(IServiceCollection services)
+    public async void ConfigureServices(IServiceCollection services)
     {
+
       //Allow Cors access from front end
       services.AddCors(options =>
       {
         options.AddPolicy(name: "AllowSpecificOrigins",
                           builder =>
                           {
-                            builder.WithOrigins("http://localhost:4200").AllowAnyHeader();
+                            builder.WithOrigins("http://localhost:4200",
+                              "localhost:4200").AllowAnyHeader();
                           });
       });
-      //"Server=LAPTOP-T6VP6L6I\SQLEXPRESS;Database=DelectableVillainy;Trusted_Connection=True;"
       services.AddSingleton<IConfiguration>(Configuration);
       services.AddDbContext<DelectableVillainyContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("VillainDBConnectionString")));
       //add Json format support
       services.AddControllersWithViews().AddNewtonsoftJson();
+      await SeedDevDb();
 
     }
 
@@ -83,12 +86,6 @@ namespace VillainsWebAPI
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-
-      using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-      {
-        var context = serviceScope.ServiceProvider.GetRequiredService<DelectableVillainyContext>();
-        context.Database.Migrate();
-      }
       //map HandleMapTest
       /*app.Map("/maptest", HandleMapTest);*/
       //DEMO ONLY, TODO: move to villain controller
@@ -98,6 +95,7 @@ namespace VillainsWebAPI
 
       if (env.IsDevelopment())
       {
+
         app.UseDeveloperExceptionPage();
       }
       //middleware pipeline order, order is important for security
@@ -120,12 +118,7 @@ namespace VillainsWebAPI
         endpoints.MapControllerRoute(
             name: "default","{controller}/{action?}/{id?}");
       });
-      /*app.UseEndpoints(endpoints =>
-      {
-        endpoints.MapControllers();
-        //endpoints.MapDefaultControllerRoute();
-        //endpoints.MapControllerRoute(name: "villain", pattern: "{controller=Villain}/{action=Attack}/{mass?}");
-      });*/
+
     }
   }
 }

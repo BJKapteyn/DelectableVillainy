@@ -10,7 +10,7 @@ using VillainsWebAPI.Models;
 namespace VillainsWebAPI.Migrations
 {
     [DbContext(typeof(DelectableVillainyContext))]
-    [Migration("20200516215314_InitialCreate")]
+    [Migration("20200517182930_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -131,6 +131,20 @@ namespace VillainsWebAPI.Migrations
                         .HasMaxLength(500)
                         .IsUnicode(false);
 
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnName("firstName")
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnName("fullName")
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100)
+                        .IsUnicode(false);
+
                     b.Property<string>("Gender")
                         .HasColumnName("gender")
                         .HasColumnType("char(1)")
@@ -144,9 +158,9 @@ namespace VillainsWebAPI.Migrations
                         .HasMaxLength(50)
                         .IsUnicode(false);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnName("name")
+                        .HasColumnName("lastName")
                         .HasColumnType("varchar(50)")
                         .HasMaxLength(50)
                         .IsUnicode(false);

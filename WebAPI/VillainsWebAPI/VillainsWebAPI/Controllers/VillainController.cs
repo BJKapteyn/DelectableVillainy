@@ -26,9 +26,10 @@ namespace VillainsWebAPI.Controllers
       {
         try
         {
-          // string villainName = Formatter.DashToSpace(villain);
+          string villainFirstName = villain.Split('-' )[0];
+          string villainLastName = villain.Split('-' )[1];
 
-          Villain v = VillainDB.Villains.Single(x => x.Name == villain);
+          Villain v = VillainDB.Villains.FirstOrDefault(x => x.FirstName.Equals(villainFirstName) && x.LastName.Equals(villainLastName));
 
           string jsonVillain = JsonConvert.SerializeObject(v);
 

@@ -127,9 +127,21 @@ namespace VillainsWebAPI.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Name)
+                entity.Property(e => e.FirstName)
                     .IsRequired()
-                    .HasColumnName("name")
+                    .HasColumnName("firstName")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FullName)
+                  .IsRequired()
+                  .HasColumnName("fullName")
+                  .HasMaxLength(100)
+                  .IsUnicode(false);
+
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasColumnName("lastName")
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
