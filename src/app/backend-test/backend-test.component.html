@@ -1,4 +1,5 @@
-<p *ngIf="BackEndVillain">{{BackEndVillain.name | async}}</p>
+<p *ngIf="BackEndVillain">{{BackEndVillain.name}}</p>
 
 <input>
 <input (click)="getVillain('Rex-Bamboo')" type="button" value="test">
+<input (click)="showVillain()" *ngIf="BackEndVillain" type="button" value="Show Villain">

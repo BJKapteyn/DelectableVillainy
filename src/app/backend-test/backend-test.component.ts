@@ -20,25 +20,20 @@ export class BackendTestComponent implements OnInit {
   VillainData: Object;
 
   getVillain(villain: string) {
-    debugger;
+    let newVillain = new Villain();
     //await this.villainService.getVillainFromAPI(villain).subscribe(villainData);
     let stuff = this.villainService.getVillainFromAPI(villain).subscribe(data =>  {
-      this.BackEndVillain = data;
+      newVillain.name = data["Name"]? data["Name"] : null;
+      newVillain.id = data["VillainId"]? data["VillainId"] : null;
+      newVillain.description = data["Description"]? data["Description"] : null;
+      newVillain.URI = null;
+      newVillain.imageLocation = null;
+      this.BackEndVillain = newVillain;
     });
-
-    console.log(this.BackEndVillain.name);
-
-
-
-    // this.villainService.getVillainFromAPI(villain).subscribe(data => this.BackEndVillain = {
-    //   name: data["Name"],
-    //   description: data["Description"],
-    //   id: data["VillainId"]
-    // });
   }
 
-  assignVillain(data: Object) {
-    this.VillainData = data;
+  showVillain() {
+    console.log(this.BackEndVillain.name)
   }
 
   ngOnInit(): void {

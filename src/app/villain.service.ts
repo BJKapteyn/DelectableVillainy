@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {Http, Response} from '@angular/http';
 import {HttpClient, HttpHeaders, HttpParams, HttpClientModule} from '@angular/common/http';
 import {IVillain, Villain} from './villain';
 import {VILLAINS} from './mock-villains';
@@ -12,6 +11,8 @@ import {MessageService} from './message.service';
 })
 
 export class VillainService {
+  constructor(public messageService: MessageService,
+    private http: HttpClient) { };
   //options to send out with the http request
   options: {
     headers?: HttpHeaders | {[header: string]: string | string[]}
@@ -41,10 +42,8 @@ export class VillainService {
   getVillainFromAPI(villainName: string)  {
     const URL = "https://localhost:44313" + "/" + villainName;
 
-    return this.http.get(URL).map();
+    return this.http.get(URL);
 
   }
 
-  constructor(public messageService: MessageService,
-    private http: Http) { };
 }
