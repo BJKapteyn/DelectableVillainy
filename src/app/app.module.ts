@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { VillainsComponent } from './villains/villains.component';
@@ -28,7 +29,8 @@ import { BackendTestComponent } from './backend-test/backend-test.component';
     FormsModule,
     AppRoutingModule,
     //HttpClientModule needs to be after BrowserModule.
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

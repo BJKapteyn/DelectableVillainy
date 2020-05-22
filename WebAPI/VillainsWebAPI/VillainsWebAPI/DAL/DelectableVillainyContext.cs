@@ -26,7 +26,7 @@ namespace VillainsWebAPI.Models
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=LAPTOP-T6VP6L6I\\SQLEXPRESS;Database=DelectableVillainy;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=DelectableVillainy;Trusted_Connection=True;");
             }
         }
 
@@ -127,9 +127,21 @@ namespace VillainsWebAPI.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Name)
+                entity.Property(e => e.FirstName)
                     .IsRequired()
-                    .HasColumnName("name")
+                    .HasColumnName("firstName")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FullName)
+                  .IsRequired()
+                  .HasColumnName("fullName")
+                  .HasMaxLength(100)
+                  .IsUnicode(false);
+
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasColumnName("lastName")
                     .HasMaxLength(50)
                     .IsUnicode(false);
 

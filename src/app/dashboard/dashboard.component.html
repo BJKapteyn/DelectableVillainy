@@ -2,11 +2,11 @@
 <ul>
   <li>
     <!--routes this link to each villain's detail view-->
-    <a routerLink="/detail/{{villains[0].URI}}">{{villains[0].name}}</a>
+    <a routerLink="/detail/{{villains[0].URI}}">{{villains[0].FullName}}</a>
   </li>
   <li *ngFor="let villain of villains | slice:1; let i = index;" class="topTen">
     <a routerLink="/detail/{{villain.URI}}">
-      <h4>{{villain.name}}</h4>
+      <h4>{{villain.FullName}}</h4>
     </a>
   </li>
 </ul>

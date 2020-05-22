@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using VillainsWebAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using static VillainsWebAPI.DAL.InitializeDb;
 
 namespace VillainsWebAPI
 {
@@ -59,23 +60,34 @@ namespace VillainsWebAPI
     }
 
     // This method gets called by the runtime. Use this method to add services to the container.
-    public void ConfigureServices(IServiceCollection services)
+    public async void ConfigureServices(IServiceCollection services)
     {
-      //"Server=LAPTOP-T6VP6L6I\SQLEXPRESS;Database=DelectableVillainy;Trusted_Connection=True;"
+
+      //Allow Cors access from front end
+      services.AddCors(options =>
+      {
+        options.AddPolicy(name: "AllowSpecificOrigins",
+                          builder =>
+                          {
+                            builder.WithOrigins("http://localhost:4200",
+                              "localhost:4200").AllowAnyHeader();
+                          });
+      });
       services.AddSingleton<IConfiguration>(Configuration);
       services.AddDbContext<DelectableVillainyContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("VillainDBConnectionString")));
-      services.AddControllers();
       //add Json format support
-      services.AddControllers().AddNewtonsoftJson();
+      services.AddControllersWithViews().AddNewtonsoftJson();
+      await SeedDevDb();
+
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
- 
+
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
       //map HandleMapTest
-      app.Map("/maptest", HandleMapTest);
+      /*app.Map("/maptest", HandleMapTest);*/
       //DEMO ONLY, TODO: move to villain controller
       //app.MapWhen(context =>
       //  context.Request.Query.ContainsKey("attack"), HandleAttack
@@ -83,6 +95,7 @@ namespace VillainsWebAPI
 
       if (env.IsDevelopment())
       {
+
         app.UseDeveloperExceptionPage();
       }
       //middleware pipeline order, order is important for security
@@ -93,16 +106,19 @@ namespace VillainsWebAPI
       //use routing defined by the app
       app.UseRouting();
 
+      //use the allowspecificorigins defined in the configureservices
+      app.UseCors("AllowSpecificOrigins");
+
       //authorize user
       app.UseAuthorization();
 
       //my defined endpoints ex. endpoints.MapRazorPages() added for an MVC app.
       app.UseEndpoints(endpoints =>
       {
-        endpoints.MapControllers();
-        //endpoints.MapDefaultControllerRoute();
-        //endpoints.MapControllerRoute(name: "villain", pattern: "{controller=Villain}/{action=Attack}/{mass?}");
+        endpoints.MapControllerRoute(
+            name: "default","{controller}/{action?}/{id?}");
       });
+
     }
   }
 }

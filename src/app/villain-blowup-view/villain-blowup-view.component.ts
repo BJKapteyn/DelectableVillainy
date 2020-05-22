@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import {Villain} from '../villain';
+import {IVillain} from '../villain';
 import {VillainService} from '../villain.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {VillainService} from '../villain.service';
 })
 export class VillainBlowupViewComponent implements OnInit {
 
-  @Input() villainBlowup: Villain;
+  @Input() villainBlowup: IVillain;
 
   isLoaded: boolean = false;
 
@@ -29,7 +29,7 @@ export class VillainBlowupViewComponent implements OnInit {
       let parent = document.getElementById('infoContainer');
       let newElement = document.createElement('h2');
       newElement.setAttribute('id', 'titleCardText');
-      newElement.innerText = this.villainBlowup.name;
+      newElement.innerText = this.villainBlowup.FullName;
       newElement.style.animationName = "titleCard";
       newElement.style.animationDuration = "2s";
       newElement.style.animationFillMode = "forward";

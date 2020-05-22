@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Villain} from './villain';
+import {HttpClient, HttpHeaders, HttpParams, HttpClientModule, HttpResponse} from '@angular/common/http';
+import {IVillain, Villain} from './villain';
 import {VILLAINS} from './mock-villains';
 import {Observable, of, throwError} from 'rxjs';
-import {catchError, retry} from 'rxjs/operators';
+import {catchError, retry, map} from 'rxjs/operators';
 import {MessageService} from './message.service';
 
 @Injectable({
@@ -11,8 +11,11 @@ import {MessageService} from './message.service';
 })
 
 export class VillainService {
+  constructor(public messageService: MessageService,
+    private http: HttpClient) { };
   //options to send out with the http request
   options: {
+    headers?: HttpHeaders | {[header: string]: string | string[]}
     //specifies how much or the response to return
     observe?: 'body',
     reportProgress?: boolean,
@@ -25,23 +28,30 @@ export class VillainService {
   //all back end URLs for API calls are stored here
   configURL = 'assets/config/json';
 
-  getVillains(): Observable<Villain[]> {
+  getVillains(): Observable<IVillain[]> {
     return of(VILLAINS);
   };
 
-  getVillain(URI: string): Observable<Villain> {
+  getVillain(URI: string): Observable<IVillain> {
     return of(VILLAINS.find(villain => villain.URI == URI));
   }
 
-  //for now format the villain name to 'first-last' backend is expecting names separated with '-' 5/4/2020
-  getVillainFromAPI(villainName: string): Observable<Object>  {
-    debugger;
-    const URL = "https://localhost:44313" + "/" + villainName;
 
-    return this.http.get(URL, this.options);
+
+  //for now format the villain name to 'first-last' backend is expecting names separated with '-' 5/4/2020
+  getVillainFromAPI(villainName: string): Observable<Villain>  {
+    const URL = "https://localhost:5001/api/villain/" + villainName;
+
+    return this.http.get<Villain>(URL, this.options).pipe(
+      map((data: Villain) => {
+        return data;
+      }),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
 
   }
 
-  constructor(public messageService: MessageService,
-    private http: HttpClient) { };
+
 }

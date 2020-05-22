@@ -2,10 +2,10 @@
   <!--If villainBlowup exists, the animation won't happen-->
   <div id="flexContainer" class="notSelectedYet" [class.alreadySelected]="this.villainBlowup">
     <div class="imageContainer">
-      <img *ngIf="this.villainBlowup" [src]="this.villainBlowup.imageLocation" />
+      <img *ngIf="this.villainBlowup" [src]="this.villainBlowup.ImageLocation" />
     </div>
     <div id="infoContainer">
-      <h2 id="titleCardText">{{villainBlowup.name}}</h2>
+      <h2 id="titleCardText">{{villainBlowup.FullName}}</h2>
     </div>
   </div>
 </div>
