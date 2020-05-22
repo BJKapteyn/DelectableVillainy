@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-import {HttpClient, HttpHeaders, HttpParams, HttpClientModule} from '@angular/common/http';
-=======
 import {HttpClient, HttpHeaders, HttpParams, HttpClientModule, HttpResponse} from '@angular/common/http';
->>>>>>> 00e20756cb2916833ca1cc3504c38355968fae10
 import {IVillain, Villain} from './villain';
 import {VILLAINS} from './mock-villains';
 import {Observable, of, throwError} from 'rxjs';
