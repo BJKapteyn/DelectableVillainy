@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
+<<<<<<< HEAD
 import {HttpClient, HttpHeaders, HttpParams, HttpClientModule} from '@angular/common/http';
+=======
+import {HttpClient, HttpHeaders, HttpParams, HttpClientModule, HttpResponse} from '@angular/common/http';
+>>>>>>> 00e20756cb2916833ca1cc3504c38355968fae10
 import {IVillain, Villain} from './villain';
 import {VILLAINS} from './mock-villains';
 import {Observable, of, throwError} from 'rxjs';
@@ -39,11 +43,19 @@ export class VillainService {
 
 
   //for now format the villain name to 'first-last' backend is expecting names separated with '-' 5/4/2020
-  getVillainFromAPI(villainName: string)  {
-    const URL = "https://localhost:44313" + "/" + villainName;
+  getVillainFromAPI(villainName: string): Observable<Villain>  {
+    const URL = "https://localhost:5001/api/villain/" + villainName;
 
-    return this.http.get(URL);
+    return this.http.get<Villain>(URL, this.options).pipe(
+      map((data: Villain) => {
+        return data;
+      }),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
 
   }
+
 
 }

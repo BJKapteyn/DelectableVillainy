@@ -4,6 +4,7 @@ import {IVillain, Villain} from '../villain';
 import {VillainService} from '../villain.service';
 import { Observable, of } from 'rxjs';
 import { stripSummaryForJitFileSuffix } from '@angular/compiler/src/aot/util';
+import { finalize } from 'rxjs/operators';
 
 
 @Component({
@@ -18,22 +19,25 @@ export class BackendTestComponent implements OnInit {
   BackEndVillain: Villain;
   TestString: string;
   VillainData: Object;
-
+  name:string;
   getVillain(villain: string) {
-    let newVillain = new Villain();
-    //await this.villainService.getVillainFromAPI(villain).subscribe(villainData);
-    let stuff = this.villainService.getVillainFromAPI(villain).subscribe(data =>  {
-      newVillain.name = data["Name"]? data["Name"] : null;
-      newVillain.id = data["VillainId"]? data["VillainId"] : null;
-      newVillain.description = data["Description"]? data["Description"] : null;
-      newVillain.URI = null;
-      newVillain.imageLocation = null;
-      this.BackEndVillain = newVillain;
-    });
-  }
+    this.villainService.getVillainFromAPI(villain)
+        .subscribe(
+            (data: Villain) => {
+              this.BackEndVillain = data;
+              console.log(this.BackEndVillain.FullName);
 
-  showVillain() {
-    console.log(this.BackEndVillain.name)
+            },
+            error => console.log(error)
+    );
+    // this.villainService.getVillainFromAPI(villain).subscribe(data => this.BackEndVillain = {
+    //   name: data["Name"],
+    //   description: data["Description"],
+    //   id: data["VillainId"]
+    // });
+  }
+  assignVillain(data: Object) {
+    this.VillainData = data;
   }
 
   ngOnInit(): void {
