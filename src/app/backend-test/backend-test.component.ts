@@ -4,6 +4,7 @@ import {IVillain, Villain} from '../villain';
 import {VillainService} from '../villain.service';
 import { Observable, of } from 'rxjs';
 import { stripSummaryForJitFileSuffix } from '@angular/compiler/src/aot/util';
+import { finalize } from 'rxjs/operators';
 
 
 @Component({
@@ -18,25 +19,23 @@ export class BackendTestComponent implements OnInit {
   BackEndVillain: Villain;
   TestString: string;
   VillainData: Object;
-
+  name:string;
   getVillain(villain: string) {
-    debugger;
-    //await this.villainService.getVillainFromAPI(villain).subscribe(villainData);
-    let stuff = this.villainService.getVillainFromAPI(villain).subscribe(data =>  {
-      this.BackEndVillain = data;
-    });
+    this.villainService.getVillainFromAPI(villain)
+        .subscribe(
+            (data: Villain) => {
+              this.BackEndVillain = data;
+              console.log(this.BackEndVillain.FullName);
 
-    console.log(this.BackEndVillain.name);
-
-
-
+            },
+            error => console.log(error)
+    );
     // this.villainService.getVillainFromAPI(villain).subscribe(data => this.BackEndVillain = {
     //   name: data["Name"],
     //   description: data["Description"],
     //   id: data["VillainId"]
     // });
   }
-
   assignVillain(data: Object) {
     this.VillainData = data;
   }
