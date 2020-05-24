@@ -1,2 +1,7 @@
-<p *ngIf="BackEndVillain">{{BackEndVillain.FullName}}</p>
-<button type="submit" (click)="getVillain('Rex-Bamboo')">GetVillain</button>
+<!-- <p *ngIf="BackEndVillains">{{BackEndVillains}}</p> -->
+<button type="submit" (click)="getVillains()">GetVillain</button>
+
+<div *ngFor="let name of this.firstNames">
+
+  <h3>{{name}}</h3>
+</div>

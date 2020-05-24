@@ -16,17 +16,18 @@ export class BackendTestComponent implements OnInit {
 
   constructor(private villainService: VillainService) { }
 
-  BackEndVillain: Villain;
+  BackEndVillains: Villain[];
   TestString: string;
   VillainData: Object;
   name:string;
-  getVillain(villain: string) {
-    this.villainService.getVillainFromAPI(villain)
+  firstNames: String[];
+  getVillains() {
+    this.villainService.getVillains()
         .subscribe(
-            (data: Villain) => {
-              this.BackEndVillain = data;
-              console.log(this.BackEndVillain.FullName);
-
+            (data: Villain[]) => {
+              this.BackEndVillains = data;
+              console.log(this.BackEndVillains);
+              this.firstNames = this.villainService.getVillainNames(data);
             },
             error => console.log(error)
     );
