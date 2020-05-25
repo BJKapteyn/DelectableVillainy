@@ -1,7 +1,7 @@
 <!-- <p *ngIf="BackEndVillains">{{BackEndVillains}}</p> -->
 <button type="submit" (click)="getVillains()">GetVillain</button>
 
-<div *ngFor="let name of this.firstNames">
+  <div *ngFor="let imageUrl of this.villainImageUrls">
 
-  <h3>{{name}}</h3>
-</div>
+    <img [src]="imageUrl" alt="Image" width="50%" height="50%" />
+  </div>

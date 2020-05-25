@@ -21,7 +21,9 @@ namespace VillainsWebAPI.Migrations
                     hometown = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
                     background = table.Column<string>(type: "text", nullable: true),
                     weapon_of_choice = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
-                    description = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true)
+                    description = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true),
+                    selfPortrait = table.Column<string>(type: "varchar(max)", unicode: false, nullable: true),
+                    imgFileName = table.Column<string>(type: "varchar(max)", unicode: false, nullable: true)
                 },
                 constraints: table =>
                 {

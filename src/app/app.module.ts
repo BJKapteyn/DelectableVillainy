@@ -26,7 +26,7 @@ import { OptionsComponent } from './options/options.component';
     VillainBlowupViewComponent,
     BackendTestComponent,
     StartGameComponent,
-    OptionsComponent
+    OptionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +37,7 @@ import { OptionsComponent } from './options/options.component';
     BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule { }
