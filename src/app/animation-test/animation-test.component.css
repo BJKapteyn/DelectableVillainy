@@ -9,4 +9,6 @@
   left: 10px;
   width: 200px;
   height: 30px;
+  z-index: 15;
+  background-color: black;
 }

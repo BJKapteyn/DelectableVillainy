@@ -1,4 +1,5 @@
 <div class="villainAnim">
   <img class="villainImg" [src]="villains[0].ImageLocation">
-  <div id="weapon"></div>
+  <div id="weapon" [@swingSword]="this.animateSword.State? 'topSwing': 'bottomSwing'"></div>
 </div>
+<button (click)="animate(this.animateSword)">Swing Sword</button>
