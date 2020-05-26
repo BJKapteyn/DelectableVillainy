@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {IVillain, Villain} from '../villain';
+import {VillainService} from '../villain.service';
 
 @Component({
   selector: 'app-animation-test',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimationTestComponent implements OnInit {
 
-  constructor() { }
+  villains: Villain[];
+
+  constructor(
+    private villainService: VillainService
+  ) { }
 
   ngOnInit(): void {
+    debugger;
+    this.villainService.getVillains().subscribe((data: Villain[]) => this.villains = data);
   }
 
 }
