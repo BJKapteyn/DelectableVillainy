@@ -7,6 +7,8 @@ export interface IVillain {
   Description: string;
   URI: string;
   ImageLocation: string;
+  SelfPortrait: string;
+  ImgFileName: string;
 }
 
 export class Villain implements IVillain {
@@ -17,7 +19,8 @@ export class Villain implements IVillain {
   Description: string;
   URI: string;
   ImageLocation: string;
-
+  SelfPortrait: string;
+  ImgFileName: string;
   constructor() {
 
   }

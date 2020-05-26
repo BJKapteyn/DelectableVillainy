@@ -10,7 +10,7 @@ using VillainsWebAPI.Models;
 namespace VillainsWebAPI.Migrations
 {
     [DbContext(typeof(DelectableVillainyContext))]
-    [Migration("20200517182930_InitialCreate")]
+    [Migration("20200525191709_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -158,6 +158,11 @@ namespace VillainsWebAPI.Migrations
                         .HasMaxLength(50)
                         .IsUnicode(false);
 
+                    b.Property<string>("ImgFileName")
+                        .HasColumnName("imgFileName")
+                        .HasColumnType("varchar(max)")
+                        .IsUnicode(false);
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnName("lastName")
@@ -169,6 +174,11 @@ namespace VillainsWebAPI.Migrations
                         .HasColumnName("nemesis")
                         .HasColumnType("varchar(50)")
                         .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<string>("SelfPortrait")
+                        .HasColumnName("selfPortrait")
+                        .HasColumnType("varchar(max)")
                         .IsUnicode(false);
 
                     b.Property<string>("WeaponOfChoice")

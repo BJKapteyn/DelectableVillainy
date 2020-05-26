@@ -1,2 +1,7 @@
-<p *ngIf="BackEndVillain">{{BackEndVillain.FullName}}</p>
-<button type="submit" (click)="getVillain('Rex-Bamboo')">GetVillain</button>
+<!-- <p *ngIf="BackEndVillains">{{BackEndVillains}}</p> -->
+<button type="submit" (click)="getVillains()">GetVillain</button>
+
+  <div *ngFor="let imageUrl of this.villainImageUrls">
+
+    <img [src]="imageUrl" alt="Image" width="50%" height="50%" />
+  </div>

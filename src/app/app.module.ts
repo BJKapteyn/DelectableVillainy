@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VillainBlowupViewComponent } from './villain-blowup-view/villain-blowup-view.component';
 import { BackendTestComponent } from './backend-test/backend-test.component';
+import { StartGameComponent } from './start-game/start-game.component';
+import { OptionsComponent } from './options/options.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { BackendTestComponent } from './backend-test/backend-test.component';
     MessagesComponent,
     DashboardComponent,
     VillainBlowupViewComponent,
-    BackendTestComponent
+    BackendTestComponent,
+    StartGameComponent,
+    OptionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,7 @@ import { BackendTestComponent } from './backend-test/backend-test.component';
     BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule { }

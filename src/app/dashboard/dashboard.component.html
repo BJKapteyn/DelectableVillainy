@@ -1,7 +1,16 @@
-<h3>Top 5 Villains:</h3>
+<div class="startContainer">
+  <div class="leftSide">
+    <a routerLink="/startgame">START GAME</a>
+  </div>
+  <div class="rightSide">
+    <a routerLink="/options">OPTIONS</a>
+  </div>
+</div>
+
+
+<!-- <h3>Top 5 Villains:</h3>
 <ul>
   <li>
-    <!--routes this link to each villain's detail view-->
     <a routerLink="/detail/{{villains[0].URI}}">{{villains[0].FullName}}</a>
   </li>
   <li *ngFor="let villain of villains | slice:1; let i = index;" class="topTen">
@@ -9,5 +18,5 @@
       <h4>{{villain.FullName}}</h4>
     </a>
   </li>
-</ul>
+</ul> -->
 <app-backend-test></app-backend-test>

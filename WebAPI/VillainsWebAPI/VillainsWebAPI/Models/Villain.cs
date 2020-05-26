@@ -6,7 +6,7 @@ namespace VillainsWebAPI.Models
 {
     public partial class Villain
     {
-      public Villain(string firstName, string lastName, string gender, short? age, string nemesis, string hometown, string weaponOfChoice, string background , string description, ICollection<Abilities> abilities, ICollection<BaseStats> baseStats)
+      public Villain(string firstName, string lastName, string gender, short? age, string nemesis, string hometown, string weaponOfChoice, string background , string description, ICollection<Abilities> abilities, ICollection<BaseStats> baseStats, string imgFileName)
       {
         FirstName = firstName;
         LastName = lastName;
@@ -18,7 +18,8 @@ namespace VillainsWebAPI.Models
         WeaponOfChoice = weaponOfChoice;
         Background = background;
         Description = description;
-      }
+        ImgFileName = imgFileName;
+    }
 
       public Villain()
         {
@@ -38,6 +39,8 @@ namespace VillainsWebAPI.Models
         public string Background { get; set; }
         public string WeaponOfChoice { get; set; }
         public string Description { get; set; }
+        public string SelfPortrait { get; set; }
+        public string ImgFileName { get; set; }
 
         public virtual ICollection<Abilities> Abilities { get; set; } = new HashSet<Abilities>();
         public virtual ICollection<BaseStats> BaseStats { get; set; } = new HashSet<BaseStats>();
