@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VillainBlowupViewComponent } from './villain-blowup-view/villain-blowup-view.component';
 import { BackendTestComponent } from './backend-test/backend-test.component';
+import { AnimationTestComponent } from './animation-test/animation-test.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BackendTestComponent } from './backend-test/backend-test.component';
     MessagesComponent,
     DashboardComponent,
     VillainBlowupViewComponent,
-    BackendTestComponent
+    BackendTestComponent,
+    AnimationTestComponent
   ],
   imports: [
     BrowserModule,
