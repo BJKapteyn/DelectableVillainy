@@ -8,6 +8,11 @@ namespace VillainsWebAPI
 {
   public class Formatter
   {
+    /// <summary>
+    /// Removes dashes in a string and adds spaces for request to database queries.
+    /// </summary>
+    /// <param name="villainName"></param>
+    /// <returns></returns>
     public static string DashToSpace(string villainName)
     {
       string[] villainFullNameArr = villainName.Split('-');
