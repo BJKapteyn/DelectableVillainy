@@ -52,6 +52,7 @@ export class VillainService {
     }
     return this.firstNames;
   }
+
   getVillain(URI: string): Observable<IVillain> {
     return of(VILLAINS.find(villain => villain.URI == URI));
   }
@@ -63,7 +64,6 @@ export class VillainService {
 
     return this.http.get<Villain>(`${baseURL}/${villainName}`, this.options).pipe(
       map((data: Villain) => {
-
         return data;
       }),
       catchError(error => {

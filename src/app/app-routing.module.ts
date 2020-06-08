@@ -20,7 +20,7 @@ const routes: Routes = [
   //:name inserts the name of the villain in the URL ex /detail/BeastWellington
   {path: 'detail/:URI', component: VillainDetailComponent},
   {path: 'animation-test', component: AnimationTestComponent},
-  {path: 'villain-battle', component: VillainBattleCompenent}
+  {path: 'villain-battle', component: VillainBattleComponent}
 ];
 
 @NgModule({
