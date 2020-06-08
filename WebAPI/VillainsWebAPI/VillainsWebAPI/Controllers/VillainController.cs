@@ -58,7 +58,7 @@ namespace VillainsWebAPI.Controllers
         }
         catch
         {
-          return Content("Sorry I couldn't find that Villain");
+          return Content("Something went wrong when finging the villains");
         }
       }
     }

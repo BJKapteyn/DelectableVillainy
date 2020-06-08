@@ -16,6 +16,7 @@ import { BackendTestComponent } from './backend-test/backend-test.component';
 import { AnimationTestComponent } from './animation-test/animation-test.component';
 import { StartGameComponent } from './start-game/start-game.component';
 import { OptionsComponent } from './options/options.component';
+import { VillainBattleComponent } from './villain-battle/villain-battle.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,10 @@ import { OptionsComponent } from './options/options.component';
     DashboardComponent,
     VillainBlowupViewComponent,
     BackendTestComponent,
-    AnimationTestComponent
+    AnimationTestComponent,
     StartGameComponent,
     OptionsComponent,
+    VillainBattleComponent,
   ],
   imports: [
     BrowserModule,

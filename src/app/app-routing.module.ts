@@ -3,6 +3,7 @@ import { RouterModule, Routes} from '@angular/router';
 import {VillainsComponent} from './villains/villains.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {VillainDetailComponent} from './villain-detail/villain-detail.component';
+import {VillainBattleComponent} from './villain-battle/villain-battle.component';
 import { AnimationTestComponent } from './animation-test/animation-test.component';
 import { StartGameComponent } from './start-game/start-game.component';
 import { OptionsComponent } from './options/options.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent },
   //:name inserts the name of the villain in the URL ex /detail/BeastWellington
   {path: 'detail/:URI', component: VillainDetailComponent},
-  {path: 'animation-test', component: AnimationTestComponent}
+  {path: 'animation-test', component: AnimationTestComponent},
+  {path: 'villain-battle', component: VillainBattleCompenent}
 ];
 
 @NgModule({
