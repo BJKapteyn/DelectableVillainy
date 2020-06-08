@@ -42,6 +42,27 @@ namespace VillainsWebAPI.Controllers
       }
     }
 
+    [HttpGet("GetAllVillains")]
+    public IActionResult GetAllVillains()
+    {
+      using (VillainDB)
+      {
+        try
+        {
+          
+          List<Villain> villains = VillainDB.Villains.ToList();
+
+          string jsonVillains = JsonConvert.SerializeObject(villains);
+
+          return Ok(jsonVillains);
+        }
+        catch
+        {
+          return Content("Sorry I couldn't find that Villain");
+        }
+      }
+    }
+
 
     [HttpGet("attack/{mass}/{opponentEgo}")]
     [HttpGet("attack")]

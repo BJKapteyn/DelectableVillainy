@@ -5,6 +5,8 @@ import {VillainService} from '../villain.service';
 import { Observable, of } from 'rxjs';
 import { stripSummaryForJitFileSuffix } from '@angular/compiler/src/aot/util';
 import { finalize } from 'rxjs/operators';
+import {SafeUrl} from '@angular/platform-browser';
+
 
 
 @Component({
@@ -16,17 +18,20 @@ export class BackendTestComponent implements OnInit {
 
   constructor(private villainService: VillainService) { }
 
-  BackEndVillain: Villain;
+  BackEndVillains: Villain[];
   TestString: string;
   VillainData: Object;
   name:string;
-  getVillain(villain: string) {
-    this.villainService.getVillainFromAPI(villain)
+  firstNames: String[];
+  villainImageUrls: SafeUrl[];
+  getVillains() {
+    this.villainService.getVillains()
         .subscribe(
-            (data: Villain) => {
-              this.BackEndVillain = data;
-              console.log(this.BackEndVillain.FullName);
-
+            (data: Villain[]) => {
+              this.BackEndVillains = data;
+              this.villainImageUrls = this.villainService.createBlobFromBase64(data);
+              console.log(this.BackEndVillains);
+              this.firstNames = this.villainService.getVillainNames(data);
             },
             error => console.log(error)
     );

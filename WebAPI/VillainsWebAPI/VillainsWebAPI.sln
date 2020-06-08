@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VillainsWebAPI", "VillainsWebAPI\VillainsWebAPI.csproj", "{350B90FD-583A-45E4-A8A9-234F6FA69678}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillainsWebAPIUnitTests", "VillainsWebAPIUnitTests\VillainsWebAPIUnitTests.csproj", "{6FA60A03-AE51-4B9F-A60D-5C9834A942D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VillainsWebAPIUnitTests", "VillainsWebAPIUnitTests\VillainsWebAPIUnitTests.csproj", "{6FA60A03-AE51-4B9F-A60D-5C9834A942D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

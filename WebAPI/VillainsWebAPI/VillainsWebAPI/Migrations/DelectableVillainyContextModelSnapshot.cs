@@ -156,6 +156,11 @@ namespace VillainsWebAPI.Migrations
                         .HasMaxLength(50)
                         .IsUnicode(false);
 
+                    b.Property<string>("ImgFileName")
+                        .HasColumnName("imgFileName")
+                        .HasColumnType("varchar(max)")
+                        .IsUnicode(false);
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnName("lastName")
@@ -167,6 +172,11 @@ namespace VillainsWebAPI.Migrations
                         .HasColumnName("nemesis")
                         .HasColumnType("varchar(50)")
                         .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<string>("SelfPortrait")
+                        .HasColumnName("selfPortrait")
+                        .HasColumnType("varchar(max)")
                         .IsUnicode(false);
 
                     b.Property<string>("WeaponOfChoice")

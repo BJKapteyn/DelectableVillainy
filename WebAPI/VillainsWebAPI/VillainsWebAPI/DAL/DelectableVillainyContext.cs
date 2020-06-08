@@ -154,6 +154,14 @@ namespace VillainsWebAPI.Models
                     .HasColumnName("weapon_of_choice")
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.Property(e => e.SelfPortrait)
+                    .HasColumnName("selfPortrait")
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ImgFileName)
+                    .HasColumnName("imgFileName")
+                    .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);

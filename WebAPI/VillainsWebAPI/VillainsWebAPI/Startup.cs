@@ -15,6 +15,7 @@ using VillainsWebAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using static VillainsWebAPI.DAL.InitializeDb;
+using VillainsWebAPI.Utilities;
 
 namespace VillainsWebAPI
 {
@@ -79,6 +80,7 @@ namespace VillainsWebAPI
       //add Json format support
       services.AddControllersWithViews().AddNewtonsoftJson();
       await SeedDevDb();
+      await SaveImage.SaveImageToDbAsync();
 
     }
 
