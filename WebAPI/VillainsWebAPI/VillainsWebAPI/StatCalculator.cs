@@ -24,7 +24,7 @@ namespace VillainsWebAPI
       result = baseAttack + attackModifier;
 
       result -= Convert.ToInt32(Math.Round(defenseModifier));
-      //return a minimum attack if the calculation ends up being very low
+      //return a minimum attack if the calculation ends up being very low or negative
       if(result < minAttack)
       {
         return minAttack;

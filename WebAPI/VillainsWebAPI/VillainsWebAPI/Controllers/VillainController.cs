@@ -57,7 +57,7 @@ namespace VillainsWebAPI.Controllers
       if(massParseSuccess && egoParseSuccess)
       {
         int attackDamage = StatCalculator.Attack(massInt, opponentEgoInt);
-
+        //Ha haaaaaa nice pat
         result = $"You did {attackDamage} damage. ALL ROIGHT";
       }
       else if(massParseSuccess && !egoParseSuccess)

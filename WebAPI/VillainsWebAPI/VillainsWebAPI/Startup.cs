@@ -86,12 +86,6 @@ namespace VillainsWebAPI
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-      //map HandleMapTest
-      /*app.Map("/maptest", HandleMapTest);*/
-      //DEMO ONLY, TODO: move to villain controller
-      //app.MapWhen(context =>
-      //  context.Request.Query.ContainsKey("attack"), HandleAttack
-      //);
 
       if (env.IsDevelopment())
       {
