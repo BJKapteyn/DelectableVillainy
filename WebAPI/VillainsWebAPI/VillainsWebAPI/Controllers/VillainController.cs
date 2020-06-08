@@ -43,14 +43,15 @@ namespace VillainsWebAPI.Controllers
     }
 
 
-    [HttpGet("attack/{mass}")]
+    [HttpGet("attack/{mass}/{opponentEgo}")]
     [HttpGet("attack")]
-    public IActionResult Attack(string mass, [FromQuery] string opponentEgo)
+    public IActionResult Attack(string mass, string opponentEgo)
     {
+
       string result = "";
       int massInt = 0;
       int opponentEgoInt = 0;
-      //
+      //S
       bool massParseSuccess = int.TryParse(mass, out massInt);
       bool egoParseSuccess = int.TryParse(opponentEgo, out opponentEgoInt);
 
